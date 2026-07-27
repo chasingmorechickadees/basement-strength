@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#31594f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Basement Strength">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Basement Strength</title>
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Basement Strength</h1>
+      <p>Local-only training companion</p>
+    </div>
+    <span id="offlineBadge" class="badge">Offline ready</span>
+  </header>
+
+  <main>
+    <nav class="tabs" aria-label="App sections">
+      <button data-view="today" class="tab active">Today</button>
+      <button data-view="workout" class="tab">Workout</button>
+      <button data-view="history" class="tab">History</button>
+      <button data-view="progress" class="tab">Progress</button>
+      <button data-view="settings" class="tab">Settings</button>
+    </nav>
+
+    <section id="view-today" class="view active">
+      <div class="card hero">
+        <div class="row between">
+          <div>
+            <div id="todayDate" class="eyebrow"></div>
+            <h2>Today's training</h2>
+          </div>
+          <span id="readinessBadge" class="badge">Ready</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><span>Next workout</span><strong id="nextWorkout">Workout A</strong></div>
+          <div class="stat"><span>Last lift</span><strong id="lastLift">None yet</strong></div>
+          <div class="stat"><span>This month</span><strong id="monthCount">0</strong></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Quick body check</h3>
+        <p class="muted">This changes today's session without changing the permanent plan.</p>
+        <div class="chip-grid" id="bodyStatusChips">
+          <button data-status="normal" class="chip selected">🙂 Good</button>
+          <button data-status="neck" class="chip">Neck</button>
+          <button data-status="glute" class="chip">Glute/hamstring</button>
+          <button data-status="low" class="chip">Low energy</button>
+        </div>
+
+        <label>What kind of day was it?
+          <select id="dayType">
+            <option value="normal">Normal day</option>
+            <option value="desk">Desk-heavy day</option>
+            <option value="drive">Long drive</option>
+            <option value="field">Field day</option>
+            <option value="pilates">Pilates/HIIT today or yesterday</option>
+            <option value="travel">Travel day</option>
+            <option value="sleep">Poor sleep</option>
+            <option value="mental">Mentally exhausted</option>
+            <option value="great">Feeling awesome</option>
+          </select>
+        </label>
+
+        <label>Energy
+          <select id="energyLevel">
+            <option value="3">Good</option>
+            <option value="2">Okay</option>
+            <option value="1">Low</option>
+            <option value="4">Excellent</option>
+          </select>
+        </label>
+
+        <div id="coachMessage" class="coach-box"></div>
+
+        <div class="row wrap">
+          <button id="startRecommended" class="primary">Start recommended workout</button>
+          <button id="startShort" class="secondary">Do the 25-minute version</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Recent consistency</h3>
+        <p class="muted">Last 28 days</p>
+        <div id="miniCalendar" class="mini-calendar"></div>
+      </div>
+    </section>
+
+    <section id="view-workout" class="view">
+      <div class="card">
+        <div class="row between wrap">
+          <div>
+            <div class="eyebrow">Current session</div>
+            <h2 id="workoutTitle">Workout A</h2>
+          </div>
+          <select id="workoutPicker" class="compact"></select>
+        </div>
+        <div class="stats">
+          <div class="stat"><span>Strength target</span><strong>30–45 min</strong></div>
+          <div class="stat"><span>Elapsed</span><strong id="elapsedTime">00:00</strong></div>
+          <div class="stat"><span>Mode</span><strong id="sessionMode">Full</strong></div>
+        </div>
+      </div>
+
+      <div id="workoutNotice" class="coach-box hidden"></div>
+      <div id="exerciseList"></div>
+
+      <div class="card">
+        <h3>Session notes</h3>
+        <div class="two-col">
+          <label>Overall effort
+            <select id="sessionEffort">
+              <option value="">Choose</option>
+              <option value="easy">Easy</option>
+              <option value="good">Good</option>
+              <option value="hard">Hard</option>
+              <option value="too_hard">Too hard</option>
+            </select>
+          </label>
+          <label>Pain during workout
+            <select id="sessionPain">
+              <option value="0">0 — none</option>
+              <option value="1">1</option><option value="2">2</option>
+              <option value="3">3</option><option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </label>
+        </div>
+        <label>Anything notable?
+          <textarea id="sessionNotes" rows="3" placeholder="Felt strong, long drive today, neck tight…"></textarea>
+        </label>
+      </div>
+
+      <div class="sticky-actions">
+        <button id="resetWorkout" class="secondary">Reset</button>
+        <button id="finishWorkout" class="primary">Finish workout</button>
+      </div>
+    </section>
+
+    <section id="view-history" class="view">
+      <div class="card">
+        <div class="row between wrap">
+          <div>
+            <h2>Workout history</h2>
+            <p class="muted">Your records stay on this device.</p>
+          </div>
+          <button id="exportCsv" class="secondary">Export CSV</button>
+        </div>
+        <div id="historyList"></div>
+      </div>
+    </section>
+
+    <section id="view-progress" class="view">
+      <div class="card">
+        <h2>Progress</h2>
+        <div class="stats">
+          <div class="stat"><span>Completed</span><strong id="statWorkouts">0</strong></div>
+          <div class="stat"><span>Last 30 days</span><strong id="stat30">0</strong></div>
+          <div class="stat"><span>Current streak</span><strong id="statStreak">0</strong></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Coach recommendations</h3>
+        <div id="recommendationsList"></div>
+      </div>
+
+      <div class="card">
+        <h3>Exercise history</h3>
+        <select id="exerciseHistorySelect"></select>
+        <div id="exerciseHistory"></div>
+      </div>
+    </section>
+
+    <section id="view-settings" class="view">
+      <div class="card">
+        <h2>Data and backups</h2>
+        <p class="muted">Workouts are stored locally in IndexedDB. Back up before clearing browser data, changing phones, or deploying a major update.</p>
+        <div class="row wrap">
+          <button id="exportBackup" class="secondary">Backup app data</button>
+          <label class="button secondary file-button">Restore backup
+            <input id="importBackup" type="file" accept=".json">
+          </label>
+          <button id="clearData" class="danger">Clear app data</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>App preferences</h3>
+        <div class="two-col">
+          <label>Default session length
+            <select id="defaultSessionLength">
+              <option value="full">Full</option>
+              <option value="short">25 minutes</option>
+            </select>
+          </label>
+          <label>Weight units
+            <select id="weightUnit">
+              <option value="lb">Pounds</option>
+              <option value="kg">Kilograms</option>
+            </select>
+          </label>
+        </div>
+        <button id="savePreferences" class="primary">Save preferences</button>
+      </div>
+
+      <div class="card">
+        <h3>Version</h3>
+        <p class="muted" id="versionLabel"></p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
