@@ -1,0 +1,357 @@
+{
+  "rotation": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "workouts": {
+    "A": {
+      "name": "Workout A",
+      "exercises": [
+        {
+          "id": "goblet-squat",
+          "name": "Goblet Squat",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Box Squat",
+            "Banded Squat"
+          ]
+        },
+        {
+          "id": "db-bench",
+          "name": "Dumbbell Bench Press",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Floor Press",
+            "Incline Push-up"
+          ]
+        },
+        {
+          "id": "one-arm-row",
+          "name": "One-arm Dumbbell Row",
+          "sets": 3,
+          "reps": "8-12",
+          "swaps": [
+            "Chest-supported Dumbbell Row",
+            "Band Row"
+          ]
+        },
+        {
+          "id": "split-squat",
+          "name": "Supported Split Squat",
+          "sets": 3,
+          "reps": "8/side",
+          "swaps": [
+            "Reverse Lunge",
+            "Step-up"
+          ]
+        },
+        {
+          "id": "pull-apart",
+          "name": "Band Pull-apart",
+          "sets": 2,
+          "reps": "15-20",
+          "swaps": []
+        },
+        {
+          "id": "pallof",
+          "name": "Pallof Press",
+          "sets": 2,
+          "reps": "10-12/side",
+          "swaps": [
+            "Dead Bug",
+            "Bird Dog"
+          ]
+        },
+        {
+          "id": "bridge",
+          "name": "Glute Bridge",
+          "sets": 2,
+          "reps": "12-15",
+          "swaps": []
+        }
+      ]
+    },
+    "B": {
+      "name": "Workout B",
+      "exercises": [
+        {
+          "id": "rdl",
+          "name": "Dumbbell Romanian Deadlift",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Sumo Deadlift",
+            "Glute Bridge"
+          ]
+        },
+        {
+          "id": "shoulder-press",
+          "name": "Standing Dumbbell Shoulder Press",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Incline Dumbbell Bench Press",
+            "Dumbbell Floor Press"
+          ]
+        },
+        {
+          "id": "incline-bench",
+          "name": "Incline Dumbbell Bench Press",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Bench Press",
+            "Incline Push-up"
+          ]
+        },
+        {
+          "id": "reverse-lunge",
+          "name": "Reverse Lunge",
+          "sets": 3,
+          "reps": "8/side",
+          "swaps": [
+            "Supported Split Squat",
+            "Step-up"
+          ]
+        },
+        {
+          "id": "hip-thrust",
+          "name": "Hip Thrust",
+          "sets": 3,
+          "reps": "10-12",
+          "swaps": [
+            "Glute Bridge",
+            "Banded Hip Thrust"
+          ]
+        },
+        {
+          "id": "band-row",
+          "name": "Band Row",
+          "sets": 2,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "dead-bug",
+          "name": "Dead Bug",
+          "sets": 2,
+          "reps": "8-10/side",
+          "swaps": [
+            "Bird Dog",
+            "Pallof Press"
+          ]
+        }
+      ]
+    },
+    "C": {
+      "name": "Workout C",
+      "exercises": [
+        {
+          "id": "ffe-split-squat",
+          "name": "Front-foot Elevated Split Squat",
+          "sets": 3,
+          "reps": "8-10/side",
+          "swaps": [
+            "Supported Split Squat",
+            "Step-up"
+          ]
+        },
+        {
+          "id": "floor-press",
+          "name": "Dumbbell Floor Press",
+          "sets": 3,
+          "reps": "8-12",
+          "swaps": [
+            "Dumbbell Bench Press",
+            "Incline Push-up"
+          ]
+        },
+        {
+          "id": "chest-supported-row",
+          "name": "Chest-supported Dumbbell Row",
+          "sets": 3,
+          "reps": "8-12",
+          "swaps": [
+            "One-arm Dumbbell Row",
+            "Band Row"
+          ]
+        },
+        {
+          "id": "sumo-deadlift",
+          "name": "Dumbbell Sumo Deadlift",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Romanian Deadlift",
+            "Glute Bridge"
+          ]
+        },
+        {
+          "id": "step-up",
+          "name": "Step-up",
+          "sets": 2,
+          "reps": "8-10/side",
+          "swaps": [
+            "Reverse Lunge",
+            "Supported Split Squat"
+          ]
+        },
+        {
+          "id": "external-rotation",
+          "name": "Field Goal Band External Rotation",
+          "sets": 2,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "suitcase-march",
+          "name": "Suitcase Carry or March",
+          "sets": 2,
+          "reps": "30-45 sec/side",
+          "swaps": []
+        }
+      ]
+    },
+    "D": {
+      "name": "Workout D",
+      "exercises": [
+        {
+          "id": "sumo-deadlift-d",
+          "name": "Dumbbell Sumo Deadlift",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Dumbbell Romanian Deadlift",
+            "Glute Bridge"
+          ]
+        },
+        {
+          "id": "arnold-press",
+          "name": "Arnold Press",
+          "sets": 3,
+          "reps": "8-10",
+          "swaps": [
+            "Standing Dumbbell Shoulder Press",
+            "Incline Dumbbell Bench Press"
+          ]
+        },
+        {
+          "id": "incline-pushup",
+          "name": "Incline Push-up",
+          "sets": 3,
+          "reps": "8-12",
+          "swaps": [
+            "Dumbbell Floor Press",
+            "Dumbbell Bench Press"
+          ]
+        },
+        {
+          "id": "renegade-row",
+          "name": "Renegade Row from Bench",
+          "sets": 3,
+          "reps": "8-10/side",
+          "swaps": [
+            "One-arm Dumbbell Row",
+            "Chest-supported Dumbbell Row"
+          ]
+        },
+        {
+          "id": "walking-lunge",
+          "name": "Walking Lunge or Reverse Lunge",
+          "sets": 3,
+          "reps": "8/side",
+          "swaps": [
+            "Supported Split Squat",
+            "Step-up"
+          ]
+        },
+        {
+          "id": "lateral-raise",
+          "name": "Lateral Raise",
+          "sets": 2,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "suitcase-carry",
+          "name": "Suitcase Carry",
+          "sets": 2,
+          "reps": "30-45 sec/side",
+          "swaps": []
+        },
+        {
+          "id": "side-plank",
+          "name": "Side Plank",
+          "sets": 2,
+          "reps": "20-30 sec/side",
+          "swaps": [
+            "Dead Bug",
+            "Bird Dog"
+          ]
+        }
+      ]
+    },
+    "Travel": {
+      "name": "Travel / Band",
+      "exercises": [
+        {
+          "id": "banded-squat",
+          "name": "Banded Squat",
+          "sets": 3,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "travel-pushup",
+          "name": "Incline Push-up",
+          "sets": 3,
+          "reps": "8-12",
+          "swaps": []
+        },
+        {
+          "id": "travel-row",
+          "name": "Band Row",
+          "sets": 3,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "travel-lunge",
+          "name": "Reverse Lunge",
+          "sets": 2,
+          "reps": "8/side",
+          "swaps": [
+            "Supported Split Squat"
+          ]
+        },
+        {
+          "id": "banded-rdl",
+          "name": "Banded Romanian Deadlift",
+          "sets": 3,
+          "reps": "12-15",
+          "swaps": []
+        },
+        {
+          "id": "travel-pullapart",
+          "name": "Band Pull-apart",
+          "sets": 2,
+          "reps": "15-20",
+          "swaps": []
+        },
+        {
+          "id": "travel-deadbug",
+          "name": "Dead Bug",
+          "sets": 2,
+          "reps": "8/side",
+          "swaps": [
+            "Bird Dog"
+          ]
+        }
+      ]
+    }
+  }
+}
